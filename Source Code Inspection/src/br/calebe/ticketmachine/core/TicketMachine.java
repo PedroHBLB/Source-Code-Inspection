@@ -11,7 +11,7 @@ import java.util.Iterator;
 public class TicketMachine {
 
     protected int valor;
-    protected int saldo;
+    protected BigDecimal saldo;
     protected int[] papelMoeda = {2, 5, 10, 20, 50, 100};
 
     public TicketMachine(int valor) {
@@ -45,7 +45,7 @@ public class TicketMachine {
             throw new SaldoInsuficienteException();
         }
         String result = "*****************\n";
-        result += "*** R$ " + valor + ",00 ****\n";
+        result += "*** R$ " + saldo + ",00 ****\n";
         result += "*****************\n";
         return result;
     }
